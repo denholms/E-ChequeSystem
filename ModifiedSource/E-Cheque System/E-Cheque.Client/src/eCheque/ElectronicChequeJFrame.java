@@ -181,7 +181,7 @@ public class ElectronicChequeJFrame extends javax.swing.JFrame {
             }
         });
 
-        jBReceivedCheque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/Send&Receivejpg.jpg"))); // NOI18N
+        jBReceivedCheque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/Send_Receivejpg.jpg"))); // NOI18N
         jBReceivedCheque.setToolTipText("Receive Cheque");
         jBReceivedCheque.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -197,7 +197,7 @@ public class ElectronicChequeJFrame extends javax.swing.JFrame {
             }
         });
 
-        jBSendCheque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/Send&Receivejpg.jpg"))); // NOI18N
+        jBSendCheque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/Send_Receivejpg.jpg"))); // NOI18N
         jBSendCheque.setToolTipText("Send Cheque");
         jBSendCheque.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
