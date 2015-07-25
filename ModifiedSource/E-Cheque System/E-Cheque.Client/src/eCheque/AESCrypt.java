@@ -19,7 +19,7 @@ import javax.crypto.spec.*;
 import java.io.*;
 
   /** Creates a new instance of SecretKeyGenerateRandomAESKey */
-  public class AESCrypt {
+  public class  AESCrypt {
        
          public SecretKey GenerateRandomAESKey() throws Exception {
 
