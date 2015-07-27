@@ -11,24 +11,20 @@ package eCheque;
  * @author Saad
  */
 //import com.Trendy.swing.plaf.TrendyLookAndFeel;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.security.PrivateKey;
-import javax.swing.UIManager;
-import javax.swing.JOptionPane;
 import java.net.ServerSocket;
 
 
 public class ReceiveChequeJFrame extends javax.swing.JFrame {
     
-     private EChequeRegisteration eChequeReg;
+     private EChequeRegistration eChequeReg;
      private PrivateKey privKey;
      private ServerSocket serverSocket;
      private boolean serverStartFlage;
      
     /** Creates new form ReceiveChequeJFrame */
-    public ReceiveChequeJFrame(EChequeRegisteration eChqReg, PrivateKey pKey) {
+    public ReceiveChequeJFrame(EChequeRegistration eChqReg, PrivateKey pKey) {
         
         try{
             //TrendyLookAndFeel tlf = new TrendyLookAndFeel();
@@ -179,7 +175,7 @@ public class ReceiveChequeJFrame extends javax.swing.JFrame {
             //Get the sever side digital certificate.
             DigitalCertificate serverDC= new DigitalCertificate();
             DigitalCertificateIO readServerDC = new DigitalCertificateIO();
-            serverDC = readServerDC.readDigitalCertificate(eChequeReg.getEWalletLoaction()+"\\Security Tools\\"+eChequeReg.getClientName()+"DigCert.edc");
+            serverDC = readServerDC.readDigitalCertificate(eChequeReg.getEWalletLocation()+"\\Security Tools\\"+eChequeReg.getClientName()+"DigCert.edc");
             
             //Initialize the server connection.
             if(!serverStartFlage){
@@ -187,7 +183,7 @@ public class ReceiveChequeJFrame extends javax.swing.JFrame {
                 serverStartFlage = true;
             }
             //Start Server Thread.
-            Runnable threadingServer = new Echqueserver(jTServerState,serverDC,eChequeReg.getEWalletLoaction(),privKey,serverSocket);
+            Runnable threadingServer = new Echqueserver(jTServerState,serverDC,eChequeReg.getEWalletLocation(),privKey,serverSocket);
             Thread  server = new Thread(threadingServer);
             server.start();
                      

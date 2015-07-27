@@ -20,7 +20,6 @@ import javax.crypto.Cipher;
 import java.security.Key;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.File;
 import java.security.PrivateKey;
@@ -31,7 +30,7 @@ public class ElectronicChequeJFrame extends javax.swing.JFrame {
     private EBankingJFrame eBankingWindow;
     private ChequeJFrame eChequeWindow;
     private SendChequeJFrame sendChequeWindow;
-    private EChequeRegisteration registerdUser;
+    private EChequeRegistration registerdUser;
     private ReceiveChequeJFrame receiveChequeWindow;
     private String userName;
     private String passTemp;
@@ -149,7 +148,7 @@ public class ElectronicChequeJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/UserLogo.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/UserLogo.png"))); // NOI18N
 
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -173,7 +172,7 @@ public class ElectronicChequeJFrame extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "GO TO:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
 
-        jBConfigure.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/Config.jpg"))); // NOI18N
+        jBConfigure.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/Config.png"))); // NOI18N
         jBConfigure.setToolTipText("System Configuration");
         jBConfigure.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,7 +180,7 @@ public class ElectronicChequeJFrame extends javax.swing.JFrame {
             }
         });
 
-        jBReceivedCheque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/Send_Receivejpg.jpg"))); // NOI18N
+        jBReceivedCheque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/Receive.png"))); // NOI18N
         jBReceivedCheque.setToolTipText("Receive Cheque");
         jBReceivedCheque.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -189,7 +188,7 @@ public class ElectronicChequeJFrame extends javax.swing.JFrame {
             }
         });
 
-        jBEBanking.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/E-Banking.jpg"))); // NOI18N
+        jBEBanking.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/E-Banking.png" ))); // NOI18N
         jBEBanking.setToolTipText("E-Banking");
         jBEBanking.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,7 +196,7 @@ public class ElectronicChequeJFrame extends javax.swing.JFrame {
             }
         });
 
-        jBSendCheque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/Send_Receivejpg.jpg"))); // NOI18N
+        jBSendCheque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/Send.png"))); // NOI18N
         jBSendCheque.setToolTipText("Send Cheque");
         jBSendCheque.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -205,7 +204,7 @@ public class ElectronicChequeJFrame extends javax.swing.JFrame {
             }
         });
 
-        jBDrawCheque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/Draw.jpg"))); // NOI18N
+        jBDrawCheque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eCheque/resources/Tools.jpg" ))); // NOI18N
         jBDrawCheque.setToolTipText("e-Cheque Tools");
         jBDrawCheque.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -342,7 +341,7 @@ public class ElectronicChequeJFrame extends javax.swing.JFrame {
         
         if(userName.hashCode()== registerdUser.getUsername()&& userName.length()!=0){
             
-            if(passTemp.hashCode()==registerdUser.getPasword()&& passTemp.length()!=0){
+            if(passTemp.hashCode()==registerdUser.getPassword()&& passTemp.length()!=0){
                 
                 jBConfigure.setEnabled(true);
                 jBEBanking.setEnabled(true);
@@ -358,21 +357,21 @@ public class ElectronicChequeJFrame extends javax.swing.JFrame {
                         AESCrypt aesCrypt = new AESCrypt();
                         Key AES128 = aesCrypt.inilizeAESKeyByPassword(passTemp);
                         Cipher cipher = aesCrypt.initializeCipher(AES128,1);
-                        InputStream in = new FileInputStream(registerdUser.getEWalletLoaction()+"\\Security Tools\\Private Key.key");
-                        OutputStream out = new FileOutputStream(registerdUser.getEWalletLoaction()+"\\Security Tools\\PrivateKey.key"); 
+                        InputStream in = new FileInputStream(registerdUser.getEWalletLocation()+"\\Security Tools\\Private Key.key");
+                        OutputStream out = new FileOutputStream(registerdUser.getEWalletLocation()+"\\Security Tools\\PrivateKey.key");
                                   
                         // decrypt the private key with the AES key and delete the plain key
                         aesCrypt.crypt(in,out,cipher);
                         in.close();
                         out.close();
-                        ObjectInputStream objIn = new ObjectInputStream (new FileInputStream(registerdUser.getEWalletLoaction()+"\\Security Tools\\PrivateKey.key"));
+                        ObjectInputStream objIn = new ObjectInputStream (new FileInputStream(registerdUser.getEWalletLocation()+"\\Security Tools\\PrivateKey.key"));
                                   
                         //load the user private key.
                         privKey = (PrivateKey)objIn.readObject();
                         objIn.close();
          
                         // delete the un secure key.
-                        File control = new File(registerdUser.getEWalletLoaction()+"\\Security Tools\\PrivateKey.key");
+                        File control = new File(registerdUser.getEWalletLocation()+"\\Security Tools\\PrivateKey.key");
                         control.delete();
                         receiveChequeWindow = new ReceiveChequeJFrame(registerdUser,privKey);
                         privateKeyFlag = true;
@@ -401,9 +400,9 @@ public class ElectronicChequeJFrame extends javax.swing.JFrame {
     
     private void loadUserInfo(){
         try{
-           registerdUser = new EChequeRegisteration();
+           registerdUser = new EChequeRegistration();
            ObjectInputStream readObj = new ObjectInputStream(new FileInputStream("Config.epc"));
-           registerdUser = (EChequeRegisteration)readObj.readObject();
+           registerdUser = (EChequeRegistration)readObj.readObject();
            activationNeed = false;
            jBActivaton.setEnabled(true);
            jTUserName.setEnabled(true);

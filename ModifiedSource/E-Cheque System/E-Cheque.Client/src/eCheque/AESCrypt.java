@@ -19,7 +19,7 @@ import javax.crypto.spec.*;
 import java.io.*;
 
   /** Creates a new instance of SecretKeyGenerateRandomAESKey */
-  public class AESCrypt {
+  public class  AESCrypt {
        
          public SecretKey GenerateRandomAESKey() throws Exception {
 
@@ -84,11 +84,9 @@ import java.io.*;
          }
 
          public SecretKeySpec inilizeAESKeyByPassword(String pass){
-            
             byte[] KeyData =pass.getBytes();
             SecretKeySpec aesKey;
             aesKey =new SecretKeySpec(KeyData,"AES");
             return aesKey;
          }
-
   }
