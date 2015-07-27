@@ -22,29 +22,9 @@ public class RSAGeneratorTest {
 
     }
 
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-        System.out.println("\nSETUP CLASS RUNNING -- Nothing to do though");
-    }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-        System.out.println("\nTEARDOWN CLASS RUNNING -- Nothing to do though");
-    }
-
-    @Before
-    public void setUp() {
-        System.out.println("\nSETUP IS RUNNING -- Nothing to do though");
-    }
-
-    @After
-    public void tearDown() {
-        System.out.println("TEARDOWN IS RUNNING -- Nothing to do though");
-    }
-
     @Test
-    public void KeysMatchRSAGenerator() throws NoSuchAlgorithmException{
-        System.out.println("testRSAGenerator");
+    public void testKeysMatchRSAGenerator() throws NoSuchAlgorithmException{
+
         RSAGenerator instance = new RSAGenerator();
         KeyPair pair = instance.GenerateRSAKeys();
 

@@ -7,16 +7,15 @@
  * and open the template in the editor.
  */
 
+package eCheque;
+
+import java.io.Serializable;
 
 /**
  *
  * @author Saad
  */
-package eCheque;
-
-import java.io.Serializable;
-
-public class EChequeRegisteration implements Serializable {
+public class EChequeRegistration implements Serializable {
     
     private String bankName;
     private String bankAddress;
@@ -26,8 +25,8 @@ public class EChequeRegisteration implements Serializable {
     private int userNameHash;
     private int passwordHash;
     
-    /** Creates a new instance of EChequeRegisteration */
-    public EChequeRegisteration() {
+    /** Creates a new instance of EChequeRegistration */
+    public EChequeRegistration() {
     }
     
     public void setBankName(String bName){
@@ -47,7 +46,7 @@ public class EChequeRegisteration implements Serializable {
         clientName = cName;
     }
     
-    public void setEWalletLoaction(String path){
+    public void setEWalletLocation(String path){
         eWalletLocation = path;
     }
     
@@ -55,7 +54,7 @@ public class EChequeRegisteration implements Serializable {
         userNameHash = hashValue;
     }
     
-    public void setPasword(int hashValue){
+    public void setPassword(int hashValue){
         passwordHash = hashValue;
     }
     
@@ -75,7 +74,7 @@ public class EChequeRegisteration implements Serializable {
         return clientName;
     }
     
-    public String getEWalletLoaction(){
+    public String getEWalletLocation(){
         return eWalletLocation;
     }
     
@@ -83,7 +82,7 @@ public class EChequeRegisteration implements Serializable {
         return userNameHash;
     }
     
-    public int getPasword(){
+    public int getPassword(){
         return passwordHash;
     }
     

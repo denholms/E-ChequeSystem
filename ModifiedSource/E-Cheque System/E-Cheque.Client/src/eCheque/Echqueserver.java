@@ -34,7 +34,7 @@ private ObjectOutputStream socketOutputObject;
 private InputStream socketInput;
 private OutputStream socketOutput;
 private JTextArea screenShell;
-private EChequeRegisteration eChequeRegist;
+private EChequeRegistration eChequeRegist;
 private DigitalCertificate serverCerit;
 private String walletPath;
 private int portID;

@@ -6,7 +6,7 @@ import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-import eCheque.EChequeRegisteration;
+import eCheque.EChequeRegistration;
 import org.junit.Test;
 
 import java.io.*;
@@ -186,12 +186,12 @@ public class AESCryptTest {
     @Test
     public void cryptBaseCase_1_1_1_7(){
         Key AES128 = tester.inilizeAESKeyByPassword("password12345678");
-        EChequeRegisteration eChequeReg = new EChequeRegisteration();
-        eChequeReg.setEWalletLoaction("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
+        EChequeRegistration eChequeReg = new EChequeRegistration();
+        eChequeReg.setEWalletLocation("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
         try {
             Cipher cipher = tester.initializeCipher(AES128,1);
-            InputStream in = new FileInputStream(eChequeReg.getEWalletLoaction()+"\\Security Tools\\Private Key.key");
-            OutputStream out = new FileOutputStream(eChequeReg.getEWalletLoaction()+"\\Security Tools\\PrivateKey.key");
+            InputStream in = new FileInputStream(eChequeReg.getEWalletLocation()+"\\Security Tools\\Private Key.key");
+            OutputStream out = new FileOutputStream(eChequeReg.getEWalletLocation()+"\\Security Tools\\PrivateKey.key");
             tester.crypt(in,out,cipher);
         } catch (Exception e) {
             e.printStackTrace();
@@ -202,12 +202,12 @@ public class AESCryptTest {
     @Test
     public void cryptThrowsIOExceptionOnNullInputStream_1_1_1_7(){
         Key AES128 = tester.inilizeAESKeyByPassword("password12345678");
-        EChequeRegisteration eChequeReg = new EChequeRegisteration();
-        eChequeReg.setEWalletLoaction("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
+        EChequeRegistration eChequeReg = new EChequeRegistration();
+        eChequeReg.setEWalletLocation("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
         try {
             Cipher cipher = tester.initializeCipher(AES128,1);
             InputStream in = null;
-            OutputStream out = new FileOutputStream(eChequeReg.getEWalletLoaction()+"\\Security Tools\\PrivateKey.key");
+            OutputStream out = new FileOutputStream(eChequeReg.getEWalletLocation()+"\\Security Tools\\PrivateKey.key");
             tester.crypt(in,out,cipher);
         } catch (Exception e) {
             e.printStackTrace();
@@ -218,11 +218,11 @@ public class AESCryptTest {
     @Test
     public void cryptThrowsIOExceptionOnNullOutputStream_1_1_1_7(){
         Key AES128 = tester.inilizeAESKeyByPassword("password12345678");
-        EChequeRegisteration eChequeReg = new EChequeRegisteration();
-        eChequeReg.setEWalletLoaction("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
+        EChequeRegistration eChequeReg = new EChequeRegistration();
+        eChequeReg.setEWalletLocation("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
         try {
             Cipher cipher = tester.initializeCipher(AES128,1);
-            InputStream in = new FileInputStream(eChequeReg.getEWalletLoaction()+"\\Security Tools\\Private Key.key");
+            InputStream in = new FileInputStream(eChequeReg.getEWalletLocation()+"\\Security Tools\\Private Key.key");
             OutputStream out = null;
             tester.crypt(in,out,cipher);
         } catch (Exception e) {
@@ -233,12 +233,12 @@ public class AESCryptTest {
 
     @Test
     public void cryptThrowsIllegalArgumentExceptionOnNullCipher_1_1_1_7(){
-        EChequeRegisteration eChequeReg = new EChequeRegisteration();
-        eChequeReg.setEWalletLoaction("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
+        EChequeRegistration eChequeReg = new EChequeRegistration();
+        eChequeReg.setEWalletLocation("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
         try {
             Cipher cipher = null;
-            InputStream in = new FileInputStream(eChequeReg.getEWalletLoaction()+"\\Security Tools\\Private Key.key");
-            OutputStream out = new FileOutputStream(eChequeReg.getEWalletLoaction()+"\\Security Tools\\PrivateKey.key");
+            InputStream in = new FileInputStream(eChequeReg.getEWalletLocation()+"\\Security Tools\\Private Key.key");
+            OutputStream out = new FileOutputStream(eChequeReg.getEWalletLocation()+"\\Security Tools\\PrivateKey.key");
             tester.crypt(in,out,cipher);
         } catch (Exception e) {
             e.printStackTrace();
@@ -249,12 +249,12 @@ public class AESCryptTest {
     @Test
     public void cryptHandlesEmptyInputStream_1_1_1_7(){
         Key AES128 = tester.inilizeAESKeyByPassword("password12345678");
-        EChequeRegisteration eChequeReg = new EChequeRegisteration();
-        eChequeReg.setEWalletLoaction("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
+        EChequeRegistration eChequeReg = new EChequeRegistration();
+        eChequeReg.setEWalletLocation("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
         try {
             Cipher cipher = tester.initializeCipher(AES128,1);
-            InputStream in = new FileInputStream(eChequeReg.getEWalletLoaction()+"\\Security Tools\\emptyPrivate Key.key");
-            OutputStream out = new FileOutputStream(eChequeReg.getEWalletLoaction()+"\\Security Tools\\PrivateKey.key");
+            InputStream in = new FileInputStream(eChequeReg.getEWalletLocation()+"\\Security Tools\\emptyPrivate Key.key");
+            OutputStream out = new FileOutputStream(eChequeReg.getEWalletLocation()+"\\Security Tools\\PrivateKey.key");
             tester.crypt(in,out,cipher);
         } catch (Exception e) {
             e.printStackTrace();
