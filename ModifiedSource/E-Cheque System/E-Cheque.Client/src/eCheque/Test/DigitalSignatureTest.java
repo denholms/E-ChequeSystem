@@ -5,7 +5,6 @@ import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.*;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import eCheque.Digitalsigneture;
 import org.junit.Before;
 import org.junit.Test;
@@ -53,13 +52,12 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void nullMessageShouldThrowException_1_1_4_1() {
+    public void nullMessageShouldThrowIllegalArgumentException_1_1_4_1() {
         String message = null;
         byte[] sig = null;
         try {
             sig = tester.signeture(message,priv);
         } catch (Exception e) {
-            e.printStackTrace();
             assertNull(sig);
             assert(e instanceof IllegalArgumentException);
             return;
@@ -116,16 +114,15 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void nullPrivateKeyShouldThrowException_1_1_4_3(){
+    public void nullPrivateKeyShouldThrowIllegalArgumentException_1_1_4_3(){
         byte[] sig = null;
         PrivateKey nullPrivKey = null;
 
         try{
             sig = tester.signeture(normalMessage, nullPrivKey);
         } catch (Exception e){
-            e.printStackTrace();
             assertNull(sig);
-            assert(e instanceof InvalidArgumentException);
+            assert(e instanceof IllegalArgumentException);
             return;
         }
     }
@@ -133,8 +130,8 @@ public class DigitalSignatureTest {
     @Test
     public void shortPrivateKeyShouldReturnValidSig_1_1_4_4(){
         byte[] sig;
-        PrivateKey shortPriv = null;
-        Digitalsigneture test = null;
+        PrivateKey shortPriv;
+        Digitalsigneture test;
 
         try {
             test = new Digitalsigneture();
@@ -189,14 +186,13 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void nullSignedMessageShouldThrowException_1_1_4_5(){
+    public void nullSignedMessageShouldThrowIllegalArgumentException_1_1_4_5(){
         byte[] sig = null;
 
         try {
             assertFalse(tester.verifySignature(sig, normalMessage, pub));
         } catch (Exception e){
-            e.printStackTrace();
-            assert(e instanceof InvalidArgumentException);
+            assert(e instanceof IllegalArgumentException);
             return;
         }
     }
@@ -209,21 +205,19 @@ public class DigitalSignatureTest {
             assertFalse(tester.verifySignature(sig, normalMessage, pub));
         } catch (Exception e){
             e.printStackTrace();
-            assert(e instanceof SignatureException);
             return;
         }
     }
 
     @Test
-    public void nullPublicKeyShouldThrowException_1_1_4_6() {
+    public void nullPublicKeyShouldThrowIllegalArgumentException_1_1_4_6() {
         byte[] sig;
         PublicKey nullPubKey = null;
         try{
             sig = tester.signeture(normalMessage, priv);
             assertFalse(tester.verifySignature(sig, normalMessage, nullPubKey));
         } catch (Exception e){
-            e.printStackTrace();
-            assert(e instanceof InvalidArgumentException);
+            assert(e instanceof IllegalArgumentException);
             return;
         }
     }
