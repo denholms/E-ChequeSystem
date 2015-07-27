@@ -6,7 +6,7 @@ public class DigitalCertificateIO {
     
     public void SaveDC(DigitalCertificate a, String filePath)throws IOException
     {
-        //To create a new file to store Digtial Certificate Object.
+        //To create a new file to store Digital Certificate Object.
         ObjectOutputStream out =new ObjectOutputStream(new FileOutputStream(new File(filePath)));
         
         out.writeObject(a);
