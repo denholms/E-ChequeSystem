@@ -110,6 +110,19 @@ public class EChequeTest {
 
     // TC 1.1.5.1
     @Test
+    public void TestEarnDayAccessors(){
+        ECheque eCheque = new ECheque();
+        String earnDay = "Monday";
+
+        eCheque.setearnday(earnDay);
+        Assert.assertEquals(earnDay, eCheque.getearnday());
+
+        eCheque.setearnday(null);
+        Assert.assertNull(eCheque.getearnday());
+    }
+
+    // TC 1.1.5.1
+    @Test
     public void TestBankSignatureAccessors(){
         ECheque eCheque = new ECheque();
         byte[] signature = {1, 0, 0, 1, 0, 0 ,1};
