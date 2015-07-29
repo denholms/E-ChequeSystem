@@ -20,3 +20,8 @@ hs_err_pid*
 
 .idea/workplace.xml
 .idea/tasks.xml
+.idea/misc*
+ModifiedSource/E-Cheque System/Config.epc
+ModifiedSource/E-Cheque System/E-Cheque.Client/TestCertificate
+ModifiedSource/E-Cheque System/E-Cheque.Server/TestCertificate
+
