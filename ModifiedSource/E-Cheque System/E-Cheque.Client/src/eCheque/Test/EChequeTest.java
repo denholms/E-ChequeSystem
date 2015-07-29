@@ -7,7 +7,7 @@ public class EChequeTest {
 
     // TC 1.1.5.1
     @Test
-    public void TestAccountHolderAccessors(){
+    public void TC1151TestAccountHolderAccessors(){
         ECheque echeque = new ECheque();
         String accountHolder = "John Smith";
 
@@ -20,7 +20,7 @@ public class EChequeTest {
 
     // TC 1.1.5.1
     @Test
-    public void TestAccountNumberAccessors(){
+    public void TC1151TestAccountNumberAccessors(){
         ECheque echeque = new ECheque();
         String accountNumber = "42";
 
@@ -33,7 +33,7 @@ public class EChequeTest {
 
     // TC 1.1.5.1
     @Test
-    public void TestBankNameAccessors(){
+    public void TC1151TestBankNameAccessors(){
         ECheque eCheque = new ECheque();
         String bankName = "I'm a bank!";
 
@@ -46,7 +46,7 @@ public class EChequeTest {
 
     // TC 1.1.5.1
     @Test
-    public void TestPayToOrderOfAccessors(){
+    public void TC1151TestPayToOrderOfAccessors(){
         ECheque eCheque = new ECheque();
         String payToOrderOf = "My Bank Account";
 
@@ -59,7 +59,7 @@ public class EChequeTest {
 
     // TC 1.1.5.1
     @Test
-    public void TestAmountOfMoneyAccessors(){
+    public void TC1151TestAmountOfMoneyAccessors(){
         ECheque eCheque = new ECheque();
         String amount = "1.00";
 
@@ -72,7 +72,7 @@ public class EChequeTest {
 
     // TC 1.1.5.1
     @Test
-    public void TestCurrencyTypeAccessors(){
+    public void TC1151TestCurrencyTypeAccessors(){
         ECheque eCheque = new ECheque();
         String currencyType = "Bitcoin";
 
@@ -85,7 +85,7 @@ public class EChequeTest {
 
     // TC 1.1.5.1
     @Test
-    public void TestChequeNumberAccessors(){
+    public void TC1151TestChequeNumberAccessors(){
         ECheque eCheque = new ECheque();
         String number = "ABC-123";
 
@@ -98,7 +98,7 @@ public class EChequeTest {
 
     // TC 1.1.5.1
     @Test
-    public void TestGuaranteedAccessors(){
+    public void TC1151TestGuaranteedAccessors(){
         ECheque eCheque = new ECheque();
 
         eCheque.setguaranteed(true);
@@ -110,7 +110,7 @@ public class EChequeTest {
 
     // TC 1.1.5.1
     @Test
-    public void TestEarnDayAccessors(){
+    public void TC1151TestEarnDayAccessors(){
         ECheque eCheque = new ECheque();
         String earnDay = "Monday";
 
@@ -123,7 +123,7 @@ public class EChequeTest {
 
     // TC 1.1.5.1
     @Test
-    public void TestBankSignatureAccessors(){
+    public void TC1151TestBankSignatureAccessors(){
         ECheque eCheque = new ECheque();
         byte[] signature = {1, 0, 0, 1, 0, 0 ,1};
 
@@ -136,7 +136,7 @@ public class EChequeTest {
 
     // TC 1.1.5.1
     @Test
-    public void TestDrawerSignatureAccessors(){
+    public void TC1151TestDrawerSignatureAccessors(){
         ECheque eCheque = new ECheque();
         byte[] signature = {1, 0, 0, 1, 0, 0 ,1};
 

@@ -23,7 +23,7 @@ public class RSAGeneratorTest {
     }
 
     @Test
-    public void testKeysMatchRSAGenerator() throws NoSuchAlgorithmException{
+    public void TC1181testKeysMatchRSAGenerator() throws NoSuchAlgorithmException{
 
         RSAGenerator instance = new RSAGenerator();
         KeyPair pair = instance.GenerateRSAKeys();

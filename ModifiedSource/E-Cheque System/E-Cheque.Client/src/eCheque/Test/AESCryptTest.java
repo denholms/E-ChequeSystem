@@ -21,7 +21,7 @@ public class AESCryptTest {
     AESCrypt tester = new AESCrypt();
 
     @Test
-    public void generatesValidAESKey_1_1_1_1() throws Exception{
+    public void TC1111generatesValidAESKey() throws Exception{
         SecretKey key = tester.GenerateRandomAESKey();
         assert(key.getEncoded().length > 0);
         assertEquals("RAW", key.getFormat());
@@ -30,7 +30,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void generatesAESKeyByShortPassword_1_1_1_2() {
+    public void TC1112generatesAESKeyByShortPassword() {
         SecretKeySpec key = tester.inilizeAESKeyByPassword("pas");
         assert(key.getEncoded().length > 0);
         assertEquals("RAW", key.getFormat());
@@ -39,7 +39,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void generatesAESKeyByRegularPassword_1_1_1_2() {
+    public void TC1112generatesAESKeyByRegularPassword() {
         SecretKeySpec key = tester.inilizeAESKeyByPassword("sUp3rPw0rd");
         assert(key.getEncoded().length > 0);
         assertEquals("RAW", key.getFormat());
@@ -48,7 +48,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void generatesAESKeyByLongPassword_1_1_1_2() {
+    public void TC1112generatesAESKeyByLongPassword() {
         SecretKeySpec key = tester.inilizeAESKeyByPassword("sup3rerduperlongpasswordThatm@ybeshouldn'tbesolong");
         assert(key.getEncoded().length > 0);
         assertEquals("RAW", key.getFormat());
@@ -57,7 +57,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void nullPasswordThrowsIllegalArgumentException_1_1_1_3() {
+    public void TC1113nullPasswordThrowsIllegalArgumentException() {
         String password = null;
         SecretKeySpec key = null;
 
@@ -71,7 +71,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void emptyPasswordThrowsIllegalArgumentException_1_1_1_3(){
+    public void TC1113emptyPasswordThrowsIllegalArgumentException(){
         SecretKeySpec key = null;
         try {
             key = tester.inilizeAESKeyByPassword("");
@@ -82,7 +82,7 @@ public class AESCryptTest {
     }
 
     @Test //Password must be 16 characters
-    public void initializeCipherReturnsValidCipherUsing0Mode_1_1_1_4(){
+    public void TC1114initializeCipherReturnsValidCipherUsing0Mode(){
         Cipher cipher;
         Key key = tester.inilizeAESKeyByPassword("passw0rded124567");
         try {
@@ -95,7 +95,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void initializeCipherTurnsValidCipherUsing1Mode_1_1_1_4(){
+    public void TC1114initializeCipherTurnsValidCipherUsing1Mode(){
         Cipher cipher;
         Key key = tester.inilizeAESKeyByPassword("passw0rded124567");
         try {
@@ -108,7 +108,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void initializeCipherTurnsValidCipherUsing2Mode_1_1_1_4(){
+    public void TC1114initializeCipherTurnsValidCipherUsing2Mode(){
         Cipher cipher = null;
         Key key = tester.inilizeAESKeyByPassword("passw0rded124567");
         try {
@@ -122,7 +122,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void initializeCipherTurnsValidCipherUsing3Mode_1_1_1_4(){
+    public void TC1114initializeCipherTurnsValidCipherUsing3Mode(){
         Cipher cipher = null;
         Key key = tester.inilizeAESKeyByPassword("passw0rded124567");
         try {
@@ -136,7 +136,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void initializeCipherThrowsIllegalArgumentExceptionOnNullKey_1_1_1_5(){
+    public void TC1115initializeCipherThrowsIllegalArgumentExceptionOnNullKey(){
         Cipher cipher = null;
         Key key = null;
         try {
@@ -148,7 +148,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void initializeCipherThrowsInvalidKeyExceptionOn64ByteKey_1_1_1_6(){
+    public void TC1116initializeCipherThrowsInvalidKeyExceptionOn64ByteKey(){
         Cipher cipher = null;
         Key key = tester.inilizeAESKeyByPassword("passw0rded124567passw0rded12passw0rded124567passw0rded1212341234");
         try {
@@ -160,7 +160,7 @@ public class AESCryptTest {
     }
 
     @Test
-      public void initializeCipherThrowsInvalidKeyExceptionOn32ByteKey_1_1_1_6(){
+      public void TC1116initializeCipherThrowsInvalidKeyExceptionOn32ByteKey(){
         Cipher cipher = null;
         Key key = tester.inilizeAESKeyByPassword("passw0rded124567passw0rded12pas4");
         try {
@@ -172,7 +172,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void initializeCipherThrowsInvalidKeyExceptionOn10ByteKey_1_1_1_6(){
+    public void TC1116initializeCipherThrowsInvalidKeyExceptionOn10ByteKey(){
         Cipher cipher = null;
         Key key = tester.inilizeAESKeyByPassword("passw0rded");
         try {
@@ -184,7 +184,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void cryptBaseCase_1_1_1_7(){
+    public void TC1117cryptBaseCase(){
         Key AES128 = tester.inilizeAESKeyByPassword("password12345678");
         EChequeRegistration eChequeReg = new EChequeRegistration();
         eChequeReg.setEWalletLocation("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
@@ -200,7 +200,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void cryptThrowsIOExceptionOnNullInputStream_1_1_1_7(){
+    public void TC1117cryptThrowsIOExceptionOnNullInputStream(){
         Key AES128 = tester.inilizeAESKeyByPassword("password12345678");
         EChequeRegistration eChequeReg = new EChequeRegistration();
         eChequeReg.setEWalletLocation("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
@@ -216,7 +216,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void cryptThrowsIOExceptionOnNullOutputStream_1_1_1_7(){
+    public void TC1117cryptThrowsIOExceptionOnNullOutputStream(){
         Key AES128 = tester.inilizeAESKeyByPassword("password12345678");
         EChequeRegistration eChequeReg = new EChequeRegistration();
         eChequeReg.setEWalletLocation("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
@@ -232,7 +232,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void cryptThrowsIllegalArgumentExceptionOnNullCipher_1_1_1_7(){
+    public void TC1117cryptThrowsIllegalArgumentExceptionOnNullCipher(){
         EChequeRegistration eChequeReg = new EChequeRegistration();
         eChequeReg.setEWalletLocation("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");
         try {
@@ -247,7 +247,7 @@ public class AESCryptTest {
     }
 
     @Test
-    public void cryptHandlesEmptyInputStream_1_1_1_7(){
+    public void TC1117cryptHandlesEmptyInputStream(){
         Key AES128 = tester.inilizeAESKeyByPassword("password12345678");
         EChequeRegistration eChequeReg = new EChequeRegistration();
         eChequeReg.setEWalletLocation("D:\\Documents\\Programming\\SENG426\\E-ChequeSystem\\Wallet");

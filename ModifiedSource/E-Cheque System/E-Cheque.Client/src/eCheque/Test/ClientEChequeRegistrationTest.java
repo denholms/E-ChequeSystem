@@ -15,7 +15,7 @@ public class ClientEChequeRegistrationTest {
 
 
     @Test
-    public void testBankNameAccessor(){
+    public void TC1171testBankNameAccessor(){
         String expBankName = "Bankers Banking Bank";
 
         instance.setBankName(null);
@@ -26,7 +26,7 @@ public class ClientEChequeRegistrationTest {
     }
 
     @Test
-    public void testBankAddressAccessor(){
+    public void TC1171testBankAddressAccessor(){
         String expBankAddress = "123 Fake Street";
 
         instance.setBankAddress(null);
@@ -37,7 +37,7 @@ public class ClientEChequeRegistrationTest {
     }
 
     @Test
-    public void testAccountNumberAccessor(){
+    public void TC1171testAccountNumberAccessor(){
         String expAccountNumber = "1921681100";
 
         instance.setAccountNumber(null);
@@ -48,7 +48,7 @@ public class ClientEChequeRegistrationTest {
     }
 
     @Test
-    public void testClientNameAccessor(){
+    public void TC1171testClientNameAccessor(){
         String expClientName = "Billy Johnson";
 
         instance.setClientName(null);
@@ -59,7 +59,7 @@ public class ClientEChequeRegistrationTest {
     }
 
     @Test
-    public void testWalletLocationAccessor(){
+    public void TC1171testWalletLocationAccessor(){
         String expEWalletLocation = "/home/usr/Documents/Wallet";
 
         instance.setEWalletLocation(null);
@@ -70,7 +70,7 @@ public class ClientEChequeRegistrationTest {
     }
 
     @Test
-    public void testUsernameHashAccessor(){
+    public void TC1171testUsernameHashAccessor(){
         int expUsernameHash = 42;
 
         instance.setUsername(42);
@@ -78,7 +78,7 @@ public class ClientEChequeRegistrationTest {
     }
 
     @Test
-    public void testPasswordHashAccessor(){
+    public void TC1171testPasswordHashAccessor(){
         int expPasswordHash = 42;
 
         instance.setPassword(42);
