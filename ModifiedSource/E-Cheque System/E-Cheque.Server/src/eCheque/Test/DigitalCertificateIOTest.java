@@ -15,7 +15,7 @@ import static org.junit.Assert.fail;
 public class DigitalCertificateIOTest {
 
     @Test
-    public void TC1132DigitalCertificateIOsaveDCFailure() {
+    public void TC2132DigitalCertificateIOsaveDCFailure() {
         DigitalCertificateIO testDigitalCertificateIO = new DigitalCertificateIO();
 
         DigitalCertificate testDigitalCertificate = new DigitalCertificate();
@@ -27,7 +27,7 @@ public class DigitalCertificateIOTest {
     }
 
     @Test
-    public void TC1133DigitalCertificateIOSaveAndRetrieval() {
+    public void TC2133DigitalCertificateIOSaveAndRetrieval() {
         DigitalCertificateIO testDigitalCertificateIO = new DigitalCertificateIO();
 
         DigitalCertificate testDigitalCertificate = new DigitalCertificate();
@@ -55,7 +55,7 @@ public class DigitalCertificateIOTest {
     }
 
     @Test
-    public void TC1134DigitalCertificateIORetrievalFailure() {
+    public void TC2134DigitalCertificateIORetrievalFailure() {
         DigitalCertificateIO testDigitalCertificateIO = new DigitalCertificateIO();
 
         try {

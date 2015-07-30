@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotNull;
 public class DigitalCertificateTest {
 
     @Test
-    public void TC11211setHolderNameGSReturnSame() {
+    public void TC21211setHolderNameGSReturnSame() {
         String testString = "This is a test string";
 
         DigitalCertificate testDigitalCertificate = new DigitalCertificate();
@@ -28,7 +28,7 @@ public class DigitalCertificateTest {
     }
 
     @Test
-    public void TC11212setSubjectNameGSReturnSame() {
+    public void TC21212setSubjectNameGSReturnSame() {
         String testString = "This is a test string";
 
         DigitalCertificate testDigitalCertificate = new DigitalCertificate();
@@ -41,7 +41,7 @@ public class DigitalCertificateTest {
     }
 
     @Test
-    public void TC11213setIssuerGSReturnSame() {
+    public void TC21213setIssuerGSReturnSame() {
         String testString = "This is a test string";
 
         DigitalCertificate testDigitalCertificate = new DigitalCertificate();
@@ -54,7 +54,7 @@ public class DigitalCertificateTest {
     }
 
     @Test
-    public void TC11214setSerialNumberGSReturnSame() {
+    public void TC21214setSerialNumberGSReturnSame() {
         String testString = "This is a test string";
 
         DigitalCertificate testDigitalCertificate = new DigitalCertificate();
@@ -67,7 +67,7 @@ public class DigitalCertificateTest {
     }
 
     @Test
-    public void TC11215setValidFromGSReturnSame() {
+    public void TC21215setValidFromGSReturnSame() {
         String testString = "This is a test string";
 
         DigitalCertificate testDigitalCertificate = new DigitalCertificate();
@@ -80,7 +80,7 @@ public class DigitalCertificateTest {
     }
 
     @Test
-    public void TC11216setValidToGSReturnSame() {
+    public void TC21216setValidToGSReturnSame() {
         String testString = "This is a test string";
 
         DigitalCertificate testDigitalCertificate = new DigitalCertificate();
@@ -93,7 +93,7 @@ public class DigitalCertificateTest {
     }
 
     @Test
-    public void TC11217setValidFromGSReturnSame() {
+    public void TC21217setValidFromGSReturnSame() {
 
         PublicKey testPublicKey = new PublicKey() {
             @Override
@@ -122,7 +122,7 @@ public class DigitalCertificateTest {
     }
 
     @Test
-    public void TC11218SetIssuerSignatureGSReturnSame() {
+    public void TC21218SetIssuerSignatureGSReturnSame() {
         byte[] testArray = "Test String".getBytes();
 
         DigitalCertificate testDigitalCertificate = new DigitalCertificate();
@@ -135,7 +135,7 @@ public class DigitalCertificateTest {
     }
 
     @Test
-    public void TC1131DigitalCertificateObjectNotNull() {
+    public void TC2121DigitalCertificateObjectNotNull() {
         DigitalCertificateIO testDigitalCertificateIO = new DigitalCertificateIO();
 
         assertNotNull("The object should be not Null.", testDigitalCertificateIO);

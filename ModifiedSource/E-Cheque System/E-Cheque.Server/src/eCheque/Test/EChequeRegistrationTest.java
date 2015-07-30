@@ -9,7 +9,7 @@ import eCheque.EChequeRegistration;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ServerEChequeRegistrationTest {
+public class EChequeRegistrationTest {
 
     EChequeRegistration instance = new EChequeRegistration();
 

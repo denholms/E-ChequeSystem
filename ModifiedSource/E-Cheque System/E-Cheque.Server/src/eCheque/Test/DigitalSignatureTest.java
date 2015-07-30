@@ -38,7 +38,7 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void emptyMessageShouldReturnValidSignature_1_1_4_1() {
+    public void TC2111emptyMessageShouldReturnValidSignature() {
         String message = "";
         byte[] sig;
         try {
@@ -52,7 +52,7 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void nullMessageShouldThrowIllegalArgumentException_1_1_4_1() {
+    public void TC2111nullMessageShouldThrowIllegalArgumentException() {
         String message = null;
         byte[] sig = null;
         try {
@@ -66,7 +66,7 @@ public class DigitalSignatureTest {
 
     // Base case
     @Test
-    public void signatureShouldSignRegularLengthMessage_1_1_4_2(){
+    public void TC21112signatureShouldSignRegularLengthMessage(){
         byte[] sig;
 
         try {
@@ -80,7 +80,7 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void signatureShouldSignLongMessage_1_1_4_2(){
+    public void TC21112signatureShouldSignLongMessage(){
         byte[] sig;
         String message = "";
 
@@ -99,7 +99,7 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void signatureShouldSignShortMessage_1_1_4_2(){
+    public void TC21112signatureShouldSignShortMessage(){
         byte[] sig;
         String message = "Short";
 
@@ -114,7 +114,7 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void nullPrivateKeyShouldThrowIllegalArgumentException_1_1_4_3(){
+    public void TC21113nullPrivateKeyShouldThrowIllegalArgumentException(){
         byte[] sig = null;
         PrivateKey nullPrivKey = null;
 
@@ -128,7 +128,7 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void shortPrivateKeyShouldReturnValidSig_1_1_4_4(){
+    public void TC21114shortPrivateKeyShouldReturnValidSig(){
         byte[] sig;
         PrivateKey shortPriv;
         Digitalsigneture test;
@@ -157,7 +157,7 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void longPrivateKeyShouldReturnValidSig_1_1_4_4(){
+    public void TC21114longPrivateKeyShouldReturnValidSig(){
         byte[] sig;
         PrivateKey longPriv = null;
         Digitalsigneture test = new Digitalsigneture();
@@ -186,7 +186,7 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void nullSignedMessageShouldThrowIllegalArgumentException_1_1_4_5(){
+    public void TC21115nullSignedMessageShouldThrowIllegalArgumentException(){
         byte[] sig = null;
 
         try {
@@ -198,7 +198,7 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void emptySignedMessageShouldReturnFalse_1_1_4_5(){
+    public void TC21115emptySignedMessageShouldReturnFalse(){
         byte[] sig = new byte[0];
 
         try{
@@ -210,7 +210,7 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void nullPublicKeyShouldThrowIllegalArgumentException_1_1_4_6() {
+    public void TC21116nullPublicKeyShouldThrowIllegalArgumentException() {
         byte[] sig;
         PublicKey nullPubKey = null;
         try{
@@ -224,7 +224,7 @@ public class DigitalSignatureTest {
 
     //Includes comparison to base case
     @Test
-    public void incorrectPublicKeyShouldReturnFalse_1_1_4_6(){
+    public void TC21116incorrectPublicKeyShouldReturnFalse(){
         byte[] sig;
         byte[] falseSig;
 
@@ -240,7 +240,7 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void shortSignedMessageShouldReturnTrue_1_1_4_7(){
+    public void TC21117shortSignedMessageShouldReturnTrue(){
         byte[] sig;
         String shortMessage = "short";
 
@@ -254,7 +254,7 @@ public class DigitalSignatureTest {
     }
 
     @Test
-    public void longSignedMessageShouldReturnTrue_1_1_4_7(){
+    public void TC21117longSignedMessageShouldReturnTrue(){
         byte[] sig;
         String message = "";
 

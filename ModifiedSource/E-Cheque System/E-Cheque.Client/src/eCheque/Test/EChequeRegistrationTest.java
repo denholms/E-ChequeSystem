@@ -9,7 +9,7 @@ import eCheque.EChequeRegistration;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ClientEChequeRegistrationTest {
+public class EChequeRegistrationTest {
 
     EChequeRegistration instance = new EChequeRegistration();
 
@@ -78,7 +78,7 @@ public class ClientEChequeRegistrationTest {
     }
 
     @Test
-    public void TC1171testPasswordHashAccessor(){
+    public void testPasswordHashAccessor(){
         int expPasswordHash = 42;
 
         instance.setPassword(42);
