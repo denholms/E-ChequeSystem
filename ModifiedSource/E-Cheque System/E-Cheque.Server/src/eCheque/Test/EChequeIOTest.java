@@ -41,7 +41,7 @@ public class EChequeIOTest {
 
     // TC 1.1.6.1
     @Test
-    public void TestSaveChequeSerializesEChequeToFile() throws IOException{
+    public void TC2151TestSaveChequeSerializesEChequeToFile() throws IOException{
 
         // Arrange
         ECheque eCheque = new ECheque();
@@ -69,7 +69,7 @@ public class EChequeIOTest {
 
     // TC 1.1.6.2
     @Test(expected = IOException.class)
-    public void TestSaveChequeThrowsIOExceptionForInvalidFilePath() throws IOException{
+    public void TC2152TestSaveChequeThrowsIOExceptionForInvalidFilePath() throws IOException{
         // Arrange
         ECheque eCheque = new ECheque();
         eCheque.setaccountholder("Jon Doe");
@@ -91,7 +91,7 @@ public class EChequeIOTest {
 
     // TC 1.1.6.3
     @Test(expected = IOException.class)
-    public void TestSaveChequeThrowsIOExceptionWhenFileAlreadyExists() throws IOException{
+    public void TC2153TestSaveChequeThrowsIOExceptionWhenFileAlreadyExists() throws IOException{
         // Arrange
         ECheque eCheque = new ECheque();
         eCheque.setaccountholder("Jon Doe");
@@ -116,14 +116,14 @@ public class EChequeIOTest {
 
     // TC 1.1.6.4
     @Test(expected = IllegalArgumentException.class)
-    public void TestSaveChequeThrowsIllegalArgumentExceptionForNullECheque() throws IOException{
+    public void TC2154TestSaveChequeThrowsIllegalArgumentExceptionForNullECheque() throws IOException{
         EChequeIO eChequeIO = new EChequeIO();
         eChequeIO.savecheque(null, _outputFilePath);
     }
 
     // TC 1.1.6.5
     @Test
-    public void TestReadChequeReturnsCorrentEChequeForValidFilePath() throws ClassNotFoundException, IOException{
+    public void TC2155TestReadChequeReturnsCorrentEChequeForValidFilePath() throws ClassNotFoundException, IOException{
         // Arrange
         ECheque eCheque = new ECheque();
         eCheque.setaccountholder("Jon Doe");
@@ -158,21 +158,21 @@ public class EChequeIOTest {
 
     // TC 1.1.6.6
     @Test(expected = IOException.class)
-    public void TestReadChequeThrowsIOExceptionForInvalidFilePath() throws ClassNotFoundException, IOException{
+    public void TC2156TestReadChequeThrowsIOExceptionForInvalidFilePath() throws ClassNotFoundException, IOException{
         EChequeIO eChequeIO = new EChequeIO();
         eChequeIO.readcheque("non-existent-file-path");
     }
 
     // TC 1.1.6.7
     @Test(expected = FileNotFoundException.class)
-    public void TestReadChequeThrowsIOExcepptionWhenFilePathIsDirectory() throws ClassNotFoundException, IOException{
+    public void TC2157TestReadChequeThrowsIOExcepptionWhenFilePathIsDirectory() throws ClassNotFoundException, IOException{
         EChequeIO eChequeIO = new EChequeIO();
         eChequeIO.readcheque(_testDirectoryPath);
     }
 
     // TC 1.1.6.8
     @Test
-    public void TestReadChequeReturnsNullForNonEChequeFileType() throws ClassNotFoundException, IOException{
+    public void TC2158TestReadChequeReturnsNullForNonEChequeFileType() throws ClassNotFoundException, IOException{
         // Arrange
         EChequeIO eChequeIO = new EChequeIO();
         File emptyOutputFile = new File(_testDirectoryPath, "empty.txt");
